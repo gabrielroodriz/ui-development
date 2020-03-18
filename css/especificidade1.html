@@ -6,6 +6,45 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /*
+            Em linhas gerais: NaN NaN NaN;
+            
+            1. a regra com !important
+            2. seletores mais especificos
+            3. ultima regra processada (empate)
+        */
+
+        /* 
+          *  Nesse caso o .observacao vai ser processado, porque é 
+          *  mais especifico que o P.
+        */
+        p {
+            background-color: gray;
+            border: dashed 5px orange;
+            margin: 25px;
+            padding: 15px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .observacao {
+            background-color: aqua;
+        }
+
+        p.observacao {
+            background: linear-gradient(to right, #ff4757, #ff6b81, #ff4757);
+            color: white;
+            font-weight: bold;
+            transition: .5%;
+            
+            
+        }
+
+        p.observacao:hover {
+            background-position: left;
+            cursor: pointer;
+        }
     </style>
 </head>
 
